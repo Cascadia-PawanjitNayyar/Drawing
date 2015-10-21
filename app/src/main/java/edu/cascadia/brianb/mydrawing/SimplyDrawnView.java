@@ -77,11 +77,8 @@ public class SimplyDrawnView extends View {
         //Draw Text on a Path
         mPaint.setColor(Color.CYAN);
         mPaint.setTextSize(26);
-       // mPath.addCircle(275, 850, 110, Path.Direction.CW);
-        mOval = new RectF();
-        mOval.set(0,0,mWidth,mWidth);
-        mPath.addArc(mOval, 180,0 );
-        canvas.drawTextOnPath("drawing on a path can be lots of fun", mPath, 400, -10, mPaint);
+        mPath.addArc(275, 850, 150, 250, 180, 0);
+        canvas.drawTextOnPath("drawing on a path can be lots of fun", mPath, 50, -10, mPaint);
 
 
         //Draw filled, opaque, and open ovals
@@ -100,7 +97,9 @@ public class SimplyDrawnView extends View {
 
         //Draw bee bitmap
         Drawable b = getResources().getDrawable(R.drawable.bee,null);
-        int x=50, y = 200;
+        Bitmap b1 = BitmapFactory.decodeResource(getResources(), R.drawable.bee);
+        b1= b1.createBitmap(b1);
+        canvas.drawBitmap(b1, 0,0,null);
 
     }
 }
